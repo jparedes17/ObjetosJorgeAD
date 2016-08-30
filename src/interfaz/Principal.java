@@ -5,6 +5,7 @@
  */
 
 package interfaz;
+import clases.Persona;
 
 /**
  *
@@ -15,6 +16,8 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+    Persona v[] = new Persona[5];
+    int cont=0;
     public Principal() {
         initComponents();
     }
@@ -36,7 +39,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtIdentificacion = new javax.swing.JTextField();
         txtPrimerNombre = new javax.swing.JTextField();
-        txtSegundoApellido = new javax.swing.JTextField();
+        txtPrimerApellido = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         cmbGuardar = new javax.swing.JButton();
         cmbMostrar = new javax.swing.JButton();
@@ -63,7 +66,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel3.setText("Primer Nombre:");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
-        jLabel4.setText("Segundo Apellido:");
+        jLabel4.setText("Primer Apellido:");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
         jPanel2.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 110, -1));
 
@@ -73,7 +76,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel2.add(txtPrimerNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 110, -1));
-        jPanel2.add(txtSegundoApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 110, -1));
+        jPanel2.add(txtPrimerApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 110, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 250, 140));
 
@@ -81,6 +84,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cmbGuardar.setText("Guardar");
+        cmbGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbGuardarActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
         cmbMostrar.setText("Mostrar");
@@ -112,6 +120,20 @@ public class Principal extends javax.swing.JFrame {
     private void txtPrimerNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrimerNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPrimerNombreActionPerformed
+
+    private void cmbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbGuardarActionPerformed
+        // TODO add your handling code here:
+        Persona p;
+        long identificacion;
+        String Primer_Nombre, Primer_Apellido;
+        
+        identificacion = Long.parseLong(txtIdentificacion.getText());
+        Primer_Nombre = txtPrimerNombre.getText();
+        Primer_Apellido = txtPrimerApellido.getText();
+        
+        p= new Persona (identificacion, Primer_Nombre, Primer_Apellido);
+        
+    }//GEN-LAST:event_cmbGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,8 +184,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtIdentificacion;
+    private javax.swing.JTextField txtPrimerApellido;
     private javax.swing.JTextField txtPrimerNombre;
     private javax.swing.JTextArea txtResultado;
-    private javax.swing.JTextField txtSegundoApellido;
     // End of variables declaration//GEN-END:variables
 }

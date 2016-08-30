@@ -41,4 +41,5 @@ public class Persona {
     {
         this.primer_nombre= primer_nombre;
     }
+    
 }
