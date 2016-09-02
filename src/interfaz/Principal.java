@@ -250,8 +250,19 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-        
+        int cont=0;
+        for (int i = 0; i < v.size(); i++) 
+        {
+                if (v.get(i).getgenero().equalsIgnoreCase("Femenino"))
+                {
+                    cont++;
+                }
+        }
+                if (cont==0)
+                {
+                    txtResultado.setText("No hay mujeres que mostrar");
+                }
+        txtResultado.setText("Numero de mujeres: "+cont);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
